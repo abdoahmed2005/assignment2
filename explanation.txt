@@ -1,0 +1,26 @@
+part1:
+1.process_creation.c: 
+This program uses fork() 
+to create a new process. 
+The code checks the return value pid: if pid == 0, 
+it's the child process ; if pid > 0, 
+it's the parent process.
+
+2.file1.c + file2.c: 
+This example shows the Linker's job. 
+file2.c calls the hello() function , which is defined in file1.c . 
+The Linker's job is to connect this call to the function definition when creating the final program.
+
+3.simple_program.c: 
+This is a basic program used to show the Loader's job . 
+Running ldd on it lists the shared libraries it needs . 
+The Loader is responsible for loading these libraries into memory when the program starts
+
+Part 2: What is the job of the Linker?
+The Linker takes one or more "Object Code" files (produced by the compiler) and "links" them together. 
+It resolves references between files (like the hello() function) and combines them with any necessary libraries to create a single "Executable file"
+
+Part 3: What is the job of the Loader?
+The Loader is part of the operating system.
+It takes the "Executable file" (produced by the Linker) and copies it from storage into the computer's "Memory" . 
+It also loads any required shared libraries (like ldd shows) so the CPU can start running the program
